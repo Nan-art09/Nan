@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nan's Gallery Log</title>
+    <style>
+        /* 画面全体の基本設定（2000年代の個人サイトによくあった薄いグレー背景） */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f0f0f0;
+            color: #333333;
+            font-family: "MS Pゴシック", "Hiragino Kaku Gothic ProN", sans-serif;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* メインエリアと右側のリンク・バナー欄を並べるコンテナ */
+        .main-container {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            max-width: 950px;
+        }
+
+        /* ーーー 左側：イラスト投稿ログ ーーー */
+        .board-post {
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            display: flex;
+            flex: 1;
+            min-height: 500px;
+            box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* 投稿者情報エリア（左側の縦の帯） */
+        .author-info {
+            width: 130px;
+            background-color: #f9f9f9;
+            border-right: 1px solid #cccccc;
+            padding: 15px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+        }
+        .author-badge {
+            background-color: #555555;
+            color: #ffffff;
+            font-size: 10px;
+            padding: 1px 5px;
+            border-radius: 2px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        /* ドット絵やアバターが入っていた懐かしい正方形の枠 */
+        .avatar-box {
+            width: 80px;
+            height: 80px;
+            border: 1px dashed #999999;
+            background-color: #ffffff;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ccc;
+            font-size: 10px;
+        }
+        .author-name {
+            color: #0000ff;
+            text-decoration: underline;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .level-badge {
+            background-color: #666699;
+            color: #ffffff;
+            font-size: 10px;
+            padding: 1px 5px;
+            border-radius: 2px;
+        }
+
+        /* 本文エリア（右側の広い部分） */
+        .post-content-area {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* イラスト表示部分 */
+        .posted-image {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #dddddd;
+            align-self: flex-start;
+        }
+
+        /* フッター部分（投稿時間、レス・拍手ボタン） */
+        .post-footer {
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px dashed #cccccc;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 15px;
+            font-size: 11px;
+            color: #666666;
+        }
+        .reply-btn {
+            color: #0000ff;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* ーーー 右側：当時のサイトにあったおまけ・バナー欄 ーーー */
+        .sidebar-ads {
+            width: 160px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .ad-box {
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            padding: 8px;
+            text-align: center;
+            font-size: 11px;
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+        .ad-box a {
+            color: #333333;
+            text-decoration: none;
+        }
+        .counter-num {
+            font-family: "Courier New", monospace;
+            font-weight: bold;
+            font-size: 16px;
+            color: #ff0000;
+            background: #000;
+            padding: 2px 5px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <!-- イラスト掲示板ログ本体 -->
+        <div class="board-post">
+            
+            <!-- 左側：管理人情報（Nanさん） -->
+            <div class="author-info">
+                <div class="author-badge">管理人</div>
+                <div class="avatar-box">N A N</div>
+                <a href="#" class="author-name">Nan</a>
+                <div class="level-badge">LV.11</div>
+            </div>
+
+            <!-- 右側：イラストと投稿情報 -->
+            <div class="post-content-area">
+                
+                <!-- あなたのイラスト画像（art.JPG） -->
+                <img src="art.JPG" class="posted-image" alt="イラスト">
+
+                <!-- 下部の情報バー（日本語ローカライズ版） -->
+                <div class="post-footer">
+                    <span>No.0077</span>
+                    <span>投稿日：2026/9/13 23:54</span>
+                    <span class="reply-btn">[コメントする]</span>
+                    <span class="reply-btn">[Web拍手]</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- 右側：サイドバー（当時の日本の同人サイト風） -->
+        <div class="sidebar-ads">
+            <!-- キリ番カウンター -->
+            <div class="ad-box">
+                <p style="margin-bottom: 5px;">WELCOME</p>
+                <span class="counter-num">045411</span>
+            </div>
+            <!-- 同人サーチやお友達リンクのバナー置き場 -->
+            <div class="ad-box" style="padding: 15px 5px; background: #e6e6fa; color: #4b0082; font-weight: bold;">
+                お絵かきBBS
+            </div>
+            <div class="ad-box" style="padding: 30px 5px; background: #fff0f5; color: #db7093; font-weight: bold;">
+                W E L C O M E<br>
+                <span style="font-size: 9px; font-weight: normal; color: #999;">(100×35 text link)</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
